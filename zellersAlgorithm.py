@@ -2,8 +2,6 @@
 # Date: 04/06/2023
 # Author: Sunmi Kim
 # Description: Program to display day of the week for a given date
-# Note: 1) doesn't check for days completely. For April, Nov. etc. Should check day < 30
-# 2) Can make program simpler by using: c = year % 100
 
 import sys
 dates = []
