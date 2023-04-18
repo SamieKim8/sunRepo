@@ -2,7 +2,6 @@
 # Author: Sunmi Kim
 # Description: Dice Simulator Program
 
-import random
 from colorama import Fore
 
 def display_title(): 
@@ -21,14 +20,20 @@ def get_positive_count(): # user enters preferred number to roll a dice
         except ValueError as e: # ValueError e customized
             print(e)
 
-def roll(): # to simulate rolling of a single 6-sided die. It returns the result of the roll.
+def roll():
     dice_numbers = []
-    max = 6
     preferred_number = get_positive_count()
-    for i in range(preferred_number): # dice numbers appear preferred_number times
-        dice_number = random.randint(1, max)
-        print(Fore.WHITE + f"Dice number for roll {i+1}: {dice_number}")
-        dice_numbers.append(dice_number) # each dice number will be appended to dice_numbers list
+    #print(preferred_number)
+    for i in range(preferred_number): # dice input appear preferred_number times
+        while True:
+            try:
+                dice_number = int(input(Fore.WHITE + f"Enter the dice number for roll {i+1}: "))
+                if dice_number < 1 or dice_number > 6: # validation check as dice has only 6 numbers
+                    raise ValueError(Fore.RED + "Dice number should be between 1 and 6.")
+                dice_numbers.append(dice_number) # each dice number will be appended to dice_numbers list
+                break
+            except ValueError as e:
+                print(e)
     return dice_numbers
 
 def roll_dice():
