@@ -1,12 +1,7 @@
-# Date: 04/15/2023
+# Date: 04/24/2023
 # Author: Sunmi Kim
 # Title: Contacts Manager
 # Description: Program to help user manage contacts information
-# Supports
-#   listing all contacts,
-#   viewing/adding/deleting a contact,
-#   printing a given field for all contacts.
-# Program uses dictionary of dictionaries to hold the contacts information.
 
 from colorama import Fore
 
@@ -37,25 +32,22 @@ def list(contacts): # display existing contact names
             print("\t" + str(i) + ". " + contact)
             i += 1
 
-def view(contacts): # view selected contact 
-    name_input = input("Enter the name: ")
-    name = name_input.title()
-    if name in contacts:
-        print(f"Viewing contact for {name}:")
-        name = contacts[name]
-        if name.get("address"):
-            print("\tAddress: " + name["address"])
-        if name.get("state"):
-            print("\tState: " + name["state"])
-        if name.get("company"):
-            print("\tCompany: " + name["company"])
-        if name.get("landline"):
-            print("\tLandline: " + name["landline"])
-        if name.get("mobile"):
-            print("\tMobile: " + name["mobile"])
-    else:
-        print(f"No contact found for that name, '{name}'")
-    print()
+def view(contacts):
+    while True:
+        name_input = input("Enter the name: ")
+        if not name_input.isalpha():
+            print("Please enter a valid name with only letters.")
+            continue
+        name = name_input.title()
+        if name in contacts:
+            print(f"Viewing contact for {name}:")
+            contact_info = contacts[name]
+            for field, value in contact_info.items():
+                if value:
+                    print(f"\t{field.title()}: {value}")
+            break
+        else:
+            print(f"No contact found for '{name}'")
 
 def add_contact(contacts): # add a new contact
     name_input = input("Name: ")
@@ -84,30 +76,24 @@ def del_contact(contacts): # delete an existing contact
     else:
         print(f"No contact found for that name, '{name}'.")
 
-def field():
+def field(): # user can view available columns of existing contacts
+    field_options = {
+        "1": "address",
+        "2": "state",
+        "3": "company",
+        "4": "landline",
+        "5": "mobile"
+    }
     while True:
-        try:
-            field = input(Fore.WHITE + "\t1. address \n\t2. state \n\t3. company \n\t4. landline \n\t5. mobile\n" +
-                "Please select the field you want to view: ")
-            if field == str(1) or field == "address": # address
-                selected_value = "address"     
-                return selected_value
-            elif field == str(2) or field == "state": # state
-                selected_value = "state"
-                return selected_value
-            elif field == str(3) or field == "company": # company
-                selected_value = "company"
-                return selected_value
-            elif field == str(4) or field == "landline": # landline
-                selected_value = "landline"
-                return selected_value
-            elif field == str(5) or field == "mobile": # mobile
-                selected_value = "mobile"
-                return selected_value
-            else:
-                raise ValueError(Fore.RED + "Invalid value. Please enter a number (1~5) or a field name.")
-        except ValueError as e:
-            print(e)
+        print("Please select the field you want to view:")
+        for option, field_name in field_options.items():
+            print(f"\t{option}. {field_name.title()}")
+        field_input = input("Enter the field number or name: ")
+        selected_value = field_options.get(field_input) or field_input.lower()
+        if selected_value in field_options.values():
+            return selected_value
+        else:
+            print(Fore.RED + "Invalid value. Please enter a number (1~5) or a field name.")
 
 def field_display(contacts): # display field info based on user selected_value
     selected_value = field()
