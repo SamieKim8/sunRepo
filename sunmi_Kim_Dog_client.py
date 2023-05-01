@@ -6,19 +6,28 @@ def main():
     print(Fore.GREEN + "==== Willie welcomes you! Woof woof ====")
     print(Fore.BLUE + "=" * 40)
     print(Fore.WHITE)
+
+    dog_name = input("Enter your dog's name: ")
+    dog_color = input("Enter your dog's color: ")
+    willie = Dog(dog_name, dog_color, weight=15000)
     
     while True:
         userInput = input(Fore.WHITE + "Enter the command\n'S' to get Status enquiry, \t\t'F' to feed the dog,"
-                            "\n'W' to take it for a walk, \t\t'Q' to exit:\n")
-        willie = Dog(name="Willie", color="Brown", weight=15.0) # dog name Willie instantiated.
+                            "\n'W' to take it for a walk, \t\t'Q' to exit:\n") 
         if userInput.upper() == 'S':            
             willie.printStatus()
             print("-" * 40)
         elif userInput.upper() == 'F':
-            willie.eat()
+            if willie.isHungry:
+                willie.eat()
+            else:
+                print(Fore.GREEN + f"{willie.name} is not hungry right now.")
             print("-" * 40)
         elif userInput.upper() == 'W':
-            willie.walk()
+            if willie.isHungry:
+                willie.bark()
+            else: 
+                willie.walk()
             print("-" * 40)
         elif userInput.upper() == 'Q':
             print(Fore.MAGENTA + "Good bye! Woof woof")
