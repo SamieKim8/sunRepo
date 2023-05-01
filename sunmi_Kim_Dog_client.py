@@ -9,25 +9,19 @@ def main():
 
     dog_name = input("Enter your dog's name: ")
     dog_color = input("Enter your dog's color: ")
-    willie = Dog(dog_name, dog_color, weight=15000)
+    willie = Dog(dog_name, dog_color, weight=15)
     
     while True:
         userInput = input(Fore.WHITE + "Enter the command\n'S' to get Status enquiry, \t\t'F' to feed the dog,"
-                            "\n'W' to take it for a walk, \t\t'Q' to exit:\n") 
+             "\n'W' to take it for a walk, \t\t'Q' to exit:\n") 
         if userInput.upper() == 'S':            
             willie.printStatus()
             print("-" * 40)
         elif userInput.upper() == 'F':
-            if willie.isHungry:
-                willie.eat()
-            else:
-                print(Fore.GREEN + f"{willie.name} is not hungry right now.")
+            willie.eat()
             print("-" * 40)
         elif userInput.upper() == 'W':
-            if willie.isHungry:
-                willie.bark()
-            else: 
-                willie.walk()
+            willie.walk()
             print("-" * 40)
         elif userInput.upper() == 'Q':
             print(Fore.MAGENTA + "Good bye! Woof woof")
