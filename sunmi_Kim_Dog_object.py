@@ -2,7 +2,6 @@
 # Author: Sunmi Kim
 # Title: Dog class and its client
 # Description: Program to interact with a dog
-# After dog1 eat, the weight increased 0.1 and shouldn't be hungry in printStatus. Please update accordingly. 
 
 from colorama import Fore
 
