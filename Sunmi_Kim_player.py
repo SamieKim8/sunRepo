@@ -26,8 +26,8 @@ class Player: # Superclass or parent class
         return f"Player Name: {self.name} Position: {self.position}"
 
 class Pitcher(Player): # Subclass 1 (child class 1)
-    def __init__(self, name, position, wins, loss):
-        super().__init__(name, position) # call superclass constructor
+    def __init__(self, name, wins, loss): # position removed here and below constructor
+        super().__init__(name, "Pitcher") # call superclass constructor making position fixed.
         if wins < 0:
             raise ValueError("wins cannot be negative.")
         if loss < 0:

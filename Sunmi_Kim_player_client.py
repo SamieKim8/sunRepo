@@ -40,7 +40,7 @@ def main():
         try:
             print("Adding...", k, end="  ")
             name, w, l = row
-            p = Pitcher(name, "Pitcher", w, l)
+            p = Pitcher(name, w, l) # (name, "Pitcher", w, l)
             team.append(p)
             print("....Success")
         except Exception as e:
