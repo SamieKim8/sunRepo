@@ -44,7 +44,7 @@ class Batter(Player): # Subclass 2 (child class 2)
         self.at_bats = at_bats
         self.hits = hits     
         if at_bats < 0:
-            raise ValueError("ba_Bats cannot be negative.")
+            raise ValueError("at_bats cannot be negative.")
         elif hits < 0:
             raise ValueError("hits cannot be negative.")
         
