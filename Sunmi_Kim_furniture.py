@@ -1,6 +1,6 @@
 # Title: Furniture Inheritance
 # Date: 05/18/2023
-# Student: Sunmi Kim
+# Name: Sunmi Kim
 # Description: Built-in Object class methods, Superclass, Subclass, Inheritance, and Polymorphism 
 
 class Furniture: # superclass
@@ -39,6 +39,7 @@ class Table(Furniture): # Subclass 1
         self.wood = wood # Subclass specific attribute
 
     def __str__(self): # Subclass method 1 for Polymorphism
+        super().__str__()
         return "Table Item Weight: " + str(self.weight) + " lbs Made of: " + str(self.wood)
 
 class Bed(Furniture): # Subclass 2 
@@ -49,6 +50,7 @@ class Bed(Furniture): # Subclass 2
             raise ValueError("Invalid bed size")
         
     def __str__(self): # Subclass method 2 for Polymorphism
+        super().__str__()
         return "Bed Item Weight: " + str(self.weight) + " lbs Size: " + str(self.size)
     
 class FurnitureGallery:
