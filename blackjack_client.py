@@ -1,4 +1,4 @@
-from Sunmi_Kim_blackjack_objects import Card, Deck, Hand
+from blackjack_objects import Card, Deck, Hand
 
 ##########################################################################
 # Definitions for the classes: Card, Deck and Hand

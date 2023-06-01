@@ -1,4 +1,4 @@
-from Sunmi_Kim_player import Batter, Pitcher
+from sk_player import Batter, Pitcher
 # Client code to build a Base ball team with players at
 # different positions using the Batter and Pitcher classes.
 def main():

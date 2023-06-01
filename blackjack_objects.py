@@ -13,6 +13,14 @@ class Card: # Blackjack card class
     def __init__(self, rank, suit):
         self.rank = rank
         self.suit = suit 
+
+# need to define a custom comparison method for the Card class 
+# that specifies how two Card objects should be compared. 
+    def __str__(self):
+        return f"{self.rank} of {self.suit}"
+
+    def __lt__(self, other):
+        return self.rank < other.rank
         
     @property # read-only public property that represents the value of the card.
     def value(self):
