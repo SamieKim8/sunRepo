@@ -1,16 +1,16 @@
 # Title: Player Inheritance
 # Date: 05/11/2023
-# Student: Sunmi Kim
+# Name: Sunmi Kim
 # Description: Superclass, Subclass, Inheritance, and Polymorphism 
 
 class Player: # Superclass or parent class 
     def __init__(self, name, position):
-            self.__name = name
-            self.__position = position
-            if len(name) == 0: 
-                raise ValueError("name cannot be empty.")
-            elif len(position) == 0:
-                raise ValueError("position cannot be empty.")
+        self.__name = name
+        self.__position = position
+        if len(name) == 0: 
+            raise ValueError("name cannot be empty.")
+        elif len(position) == 0:
+            raise ValueError("position cannot be empty.")
 
     # Two public properties        
     @property

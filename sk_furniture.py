@@ -5,9 +5,9 @@
 
 class Furniture: # superclass
     def __init__(self, weight): # constructor
-            self.__weight = weight
-            if weight <= 0:
-                raise ValueError("Weight must be positive")
+        self.__weight = weight
+        if weight <= 0:
+            raise ValueError("Weight must be positive")
 
     # public properties        
     @property
