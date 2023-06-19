@@ -1,5 +1,6 @@
 # Name: Sunmi Kim
 # Date: 06/09/2023
+# Course: Object Oriented Programming with Python
 # Title: Speeding Fine Calculator GUI Application
 
 import tkinter as tk
@@ -32,13 +33,13 @@ class SpeedingFineFrame(ttk.Frame): # Presentation Tier
         frame = ttk.Frame(self, padding='10 10 10 10')
         frame.grid()
 
-        label1 = ttk.Label(frame, text="Minimum Fine: $50")
+        label1 = ttk.Label(frame, text=f"Minimum Fine: ${SpeedingFineCalculator.minimumFine}")
         label1.grid(column=0, row=0, sticky=tk.W)
 
-        label2 = ttk.Label(frame, text="Penalty per MPH over limit: $5")
+        label2 = ttk.Label(frame, text=f"Penalty per MPH over limit: ${SpeedingFineCalculator.penaltyPerMPH}")
         label2.grid(column=0, row=1, sticky=tk.W)
 
-        label3 = ttk.Label(frame, text="Penalty for 50 MPH over limit: $200")
+        label3 = ttk.Label(frame, text=f"Penalty for 50 MPH over limit: ${SpeedingFineCalculator.penalty50BeyondLimit}")
         label3.grid(column=0, row=2, sticky=tk.W)
 
         label4 = ttk.Label(frame, text="Speed limit: ")
@@ -85,8 +86,10 @@ class SpeedingFineFrame(ttk.Frame): # Presentation Tier
 
             # Update the speedingLimit property to pass limit
             self.speedingFineCalculator.speedingLimit = limit
+
             fine = self.speedingFineCalculator.calculateSpeedingFine(speed)
             self.speedingFine.set(fine)
+
         except ValueError as e:
             messagebox.showerror("Please enter valid positive numbers", str(e))
 
