@@ -56,6 +56,7 @@ class Blackjack:
     
     def determineOutcome(self, bet):
         # Calculate the outcome of the game
+        self.bet = self.money
         player_points = self.playerHand.points
         dealer_points = self.dealerHand.points
         result = ""
