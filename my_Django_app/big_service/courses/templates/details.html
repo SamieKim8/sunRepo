@@ -1,0 +1,14 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ mycourse.title }} 
+{% endblock %}
+{% block content %}
+  <div class="mycard">
+    <h2>{{ mycourse.title }}</h2>
+    <p>Credit: {{ mycourse.credit }}</p>
+    <p>Grade: {{ mycourse.grade }}</p>
+    <p>Description: {{ mycourse.description }}</p>
+    <p>Back to <a href="/courses">Courses</a></p>
+  </div>
+{% endblock %}

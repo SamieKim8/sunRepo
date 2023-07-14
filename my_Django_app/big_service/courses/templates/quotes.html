@@ -1,0 +1,36 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{% static 'mystyles.css' %}">
+<body>
+
+{% include 'mymenu.html' %}
+
+<h1>Quotes from Books, Dramas, or Movies</h1>
+
+<h3>This page will be kept updated. </h3>
+<p>Today is {% now "Y-m-d" %}</p>
+
+<table border="1" align="center">
+    <tr class='th-color'>
+        <th>Title</th>
+        <th>Quote</th>
+        <th>Year</th>
+    </tr>
+    {% for x in quotes %}
+    <tr class="td-color">
+        <td>{{ x.title }}</td>
+        <td>{{ x.quote }}</td>
+        <td>{{ x.year }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- <p>In views.py you can see how to import and fetch members from the database.</p> -->
+
+{% include 'footer.html' %}
+
+</body>
+</html>

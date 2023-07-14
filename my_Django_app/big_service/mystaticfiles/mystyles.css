@@ -1,0 +1,102 @@
+@charset "utf-8";
+body {
+	font-family: "verdana", "Arial", "Helvetica";
+	margin: 20px;
+	background-image: url(images2/tree.jpg), url(images2/sky_bg.jpg);
+	background-repeat: repeat-x, repeat-x;
+	background-position: center bottom, center top;
+}
+.topnav, .topnav-default {
+	border-width: 0px;
+	border-radius: 0px;
+	background-color: #86AED3;
+  color: #ffffff;
+	padding:10px;	
+}
+.topnav a:link, .topnav a:visited {
+  text-decoration: none;
+  color: #ffffff; 
+}
+.topnav a:hover, .topnav a:active {
+  text-decoration: underline;
+}
+.mycard {
+  background-color: #f1f1f1;
+  background-image: linear-gradient(to bottom, #4D70EF, #f79d4f); 
+  background-size: 100% 120px;
+  background-repeat: no-repeat;
+  margin: 40px auto;
+  width: 500px;
+  border-radius: 5px;
+  box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23); 
+  padding: 20px;
+}
+.mycard h2 {
+  text-align: center;
+  color: #ffffff;
+  margin:20px 0 60px 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  background-color: #ffffff;
+  background-image: linear-gradient(to right, #375BDC, #4D70EF); 
+  background-size: 50px 60px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: transform .25s;
+  border-radius: 5px;
+  box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);
+  padding: 15px;
+  padding-left: 70px;
+  margin-top: 5px;
+}
+li:hover {
+  transform: scale(1.1);
+}
+a:link, a:visited {
+  color: #375BDC; 
+}
+.main, .main h1 {
+  text-align:center;
+  color:#000207;
+}
+
+#wrapper {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+h1, h3, p {
+	text-align: center;
+}
+
+footer {
+	margin-top: 60px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	background-color: #99EF6A;
+	text-align: center;
+}
+li a {
+	font-size: 16px;
+}
+
+.image-fill {
+	width: 100%;
+}
+
+table {
+  background-color: #ffffff;
+}
+
+.th-color {
+  background-color: #f6b379;
+}
+.td-color {
+  background-color: #f1cdae;
+}
+
+/* After updating, py manage.py collectstatic and py manage.py runserver */

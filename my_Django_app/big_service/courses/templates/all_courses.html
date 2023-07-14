@@ -1,0 +1,17 @@
+{% extends "master.html" %}
+
+{% block title %}
+  My big service - List of all courses
+{% endblock %}
+
+
+{% block content %}
+  <div class="mycard">
+    <h2>Python Programming Certificate for AI</h2>
+    <ol>
+      {% for x in mycourses %}
+        <li onclick="window.location = 'details/{{ x.id }}'">{{ x.title }}</li>
+      {% endfor %}
+    </ol>
+  </div>
+{% endblock %}
